@@ -22,10 +22,16 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+
+    @Column(unique = true)
     private String email;
     private String password;
     private String firstname;
     private String lastname;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role =UserRole.USER;
+
     @CreationTimestamp
     private LocalDateTime cretedAt;
     @UpdateTimestamp

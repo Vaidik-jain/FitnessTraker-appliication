@@ -22,6 +22,7 @@ public class ActivityController {
     public ResponseEntity<ActivityResponse> trackActivity(@RequestBody ActivityRequest request){
         return ResponseEntity.ok(activityService.trackActivity(request));
     }
+    
     @GetMapping
     public ResponseEntity<List<ActivityResponse>> getUserActivities(@RequestHeader (value = "X-User-Id") String userid){
    return ResponseEntity.ok(activityService.getUserActivities(userid));
